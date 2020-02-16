@@ -1,0 +1,278 @@
+/// variables ///
+$base-color: #4f6569
+$hover-color: #8564c1
+$white-color: #ffffff
+$estimator_color: #aab3c7
+/// /variables ///
+
+/// mixins ///
+@mixin font-grant
+    font-family: 'Grand Hotel', cursive
+
+@mixin font-open
+    font-family: 'Open Sans', sans-serif
+
+@mixin font-work
+    font-family: 'Work Sans', sans-serif
+
+@mixin flex
+    display: flex
+    align-items: center
+    justify-content: space-between
+/// /mixins ///
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+body
+    color: $base-color
+.section_outer
+    max-width: 1140px
+    margin: 0 auto
+.section_header
+    width: 100%
+    box-shadow: 0px 0px 7px 0px #ccc
+    height: 94px
+    &_content
+        @include flex
+        height: 100%
+    &_logo
+        @include font-grant
+        font-size: 52px
+        color: $hover-color
+        position: relative
+        width: 250px
+        a
+            text-decoration: none
+            color: $hover-color
+        span
+            position: absolute
+            left: 15%
+            bottom: 0
+            @include font-open
+            font-size: 12px
+            font-weight: 800
+    &_nav_list
+        list-style: none
+        @include flex
+        a
+            text-decoration: none
+            text-transform: uppercase
+            color: $base-color
+            @include font-work
+            font-size: 15px
+            font-weight: 500
+            padding: 36px 0px
+            margin: 0 20px
+            border-bottom: 2px solid $white-color
+            transition: .2s linear
+            &:hover
+                border-bottom: 2px solid $hover-color
+                color: $hover-color
+                transition: .2s linear
+    &_btn_book_now
+        a
+            background-color: $hover-color
+            @include font-work
+            font-size: 15px
+            font-weight: 500
+            text-transform: uppercase
+            color: $white-color
+            padding: 38px 30px
+            text-decoration: none
+            &:hover
+.section_heading
+    text-transform: capitalize
+    font-size: 42px
+    font-weight: 500
+    text-align: center
+.section_paragraph
+    @include font-work
+    font-size: 18px
+    font-weight: 500
+    color: #8998a7
+    max-width: 60%
+    margin: 0 auto
+    text-align: center
+.section_services
+    margin-top: 130px
+    text-align: center
+    @include font-work
+    &_price_block
+        max-width: 85%
+        margin: 0 auto
+    &_price_list
+        list-style: none
+        @include flex
+        margin-top: 80px
+    &_price_item
+        width: 170px
+        height: 170px
+        border-radius: 5px
+        background-color: $hover-color
+        display: flex
+        flex-direction: column
+        color: #4b3770
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: -20px
+            left: calc(50% - 20px)
+            width: 40px
+            height: 20px
+            border-radius: 50% 50% 00 / 100% 100% 0 0
+            background-color: $hover-color
+        &::after
+            content: ''
+            position: absolute
+            bottom: -20px
+            left: calc(50% - 20px)
+            width: 40px
+            height: 20px
+            border-radius: 0 0 50% 50% / 0 0 100% 100%
+            background-color: $hover-color
+        &_service
+            height: 25%
+            width: 80%
+            display: flex
+            align-items: baseline
+            justify-content: center
+            font-size: 18px
+            font-weight: 600
+            text-transform: capitalize
+            margin: 15% auto 0
+        &_rate
+            color: $white-color
+            font-size: 41px
+            padding: 5px
+        &_time
+            text-transform: uppercase
+            font-weight: 500
+.section_estimator
+    margin-top: 130px
+    margin-bottom: 130px
+    @include font-work
+    &_wrapper
+        height: 460px
+        width: 100%
+        box-shadow: 0px 6px 10px -3px #ccc
+        margin-top: 80px
+    &_main_block
+        padding: 65px 120px 65px 65px
+        display: flex
+    &_options_block
+        width: 660px
+        margin-right: 80px
+        .estimator_small_option
+            width: 70px
+            height: 70px
+            border: 2px solid $estimator_color
+            border-radius: 5px
+            display: flex
+            justify-content: center
+            align-items: center
+            font-size: 20px
+            font-weight: 500
+        .estimator_big_option
+            width: 160px
+            height: 70px
+            font-size: 14px
+            font-weight: 500
+            display: flex
+            justify-content: center
+            align-items: center
+            border: 2px solid $estimator_color
+            border-radius: 5px
+            text-align: center
+            padding: 0 20px
+        .estimator_label
+            width: 120px
+            font-size: 20px
+            color: $base-color
+            text-transform: capitalize
+            font-weight: 500
+        .estimator_category
+            margin-bottom: 25px
+            color: $estimator_color
+        &_bedrooms
+            height: 70px
+            @include flex
+            div
+                transition: .2s linear
+                &:hover
+                    background-color: #c09dff
+                    border-color: #c09dff
+                    cursor: pointer
+                    color: $white-color
+        &_bathrooms
+            height: 70px
+            @include flex
+            div
+                transition: .2s linear
+                &:hover
+                    background-color: #c09dff
+                    border-color: #c09dff
+                    cursor: pointer
+                    color: $white-color
+        &_condition
+            height: 70px
+            @include flex
+            div
+                transition: .2s linear
+                &:hover
+                    background-color: #c09dff
+                    border-color: #c09dff
+                    cursor: pointer
+                    color: $white-color
+        &_type
+            height: 70px
+            @include flex
+            div
+                transition: .2s linear
+                &:hover
+                    background-color: #c09dff
+                    border-color: #c09dff
+                    cursor: pointer
+                    color: $white-color
+    &_result_block
+        &_text
+            font-size: 20px
+            font-weight: 500
+            text-transform: capitalize
+            margin-bottom: 25px
+        &_time
+            font-size: 20px
+            font-weight: 500
+            color: $hover-color
+            margin-bottom: 10px
+        &_price
+            font-size: 65px
+            font-weight: 400
+            color: $hover-color
+            margin-bottom: 65px
+            position: relative
+            span
+                font-size: 14px
+                font-weight: 500
+                color: $estimator_color
+                text-transform: uppercase
+                position: absolute
+                top: 10px
+                right: 10px
+                width: 50px
+        &_btn
+            border: none
+            outline: none
+            color: $white-color
+            background: $hover-color
+            padding: 20px 25px
+            border-radius: 30px
+            text-transform: uppercase
+            font-weight: 500
+            cursor: pointer
+            box-shadow: 0px 1px 9px 4px #ccc;
+            transition: .2s linear
+            &:hover
+                background-color: #c09dff
