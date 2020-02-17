@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +7,15 @@
 
 body {
   color: #4f6569; }
+  body::-webkit-scrollbar {
+    width: 1em; }
+  body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px #8564c1;
+    box-shadow: inset 0 0 6px #8564c1; }
+  body::-webkit-scrollbar-thumb {
+    border-radius: 15px;
+    background-color: #8564c1;
+    outline: 1px solid #8564c1; }
 
 .section_outer {
   max-width: 1140px;
@@ -88,7 +98,7 @@ body {
   text-align: center; }
 
 .section_paragraph {
-  font-family: 'Work Sans', sans-serif;
+  line-height: 26px;
   font-size: 18px;
   font-weight: 500;
   color: #8998a7;
@@ -173,7 +183,6 @@ body {
 
 .section_estimator {
   margin-top: 130px;
-  margin-bottom: 130px;
   font-family: 'Work Sans', sans-serif; }
   .section_estimator_wrapper {
     height: 460px;
@@ -182,7 +191,7 @@ body {
     box-shadow: 0px 6px 10px -3px #ccc;
     margin-top: 80px; }
   .section_estimator_main_block {
-    padding: 65px 120px 65px 65px;
+    padding: 65px 65px 65px 65px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex; }
@@ -223,6 +232,16 @@ body {
       border-radius: 5px;
       text-align: center;
       padding: 0 20px; }
+    .section_estimator_options_block .estimator_small_option.active {
+      background-color: #8564c1;
+      border-color: #8564c1;
+      cursor: pointer;
+      color: #ffffff; }
+    .section_estimator_options_block .estimator_big_option.active {
+      background-color: #8564c1;
+      border-color: #8564c1;
+      cursor: pointer;
+      color: #ffffff; }
     .section_estimator_options_block .estimator_label {
       width: 120px;
       font-size: 20px;
@@ -323,16 +342,18 @@ body {
     font-weight: 400;
     color: #8564c1;
     margin-bottom: 65px;
-    position: relative; }
-    .section_estimator_result_block_price span {
+    display: inline-block; }
+    .section_estimator_result_block_price_wrapper {
+      position: relative; }
+    .section_estimator_result_block_price_cleaen {
+      position: relative;
+      display: inline-block;
+      bottom: 18px;
+      width: 50px;
       font-size: 14px;
       font-weight: 500;
       color: #aab3c7;
-      text-transform: uppercase;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 50px; }
+      text-transform: uppercase; }
   .section_estimator_result_block_btn {
     border: none;
     outline: none;
@@ -349,6 +370,93 @@ body {
     transition: .2s linear; }
     .section_estimator_result_block_btn:hover {
       background-color: #c09dff; }
+
+.section_slider {
+  font-family: 'Work Sans', sans-serif;
+  margin-top: 130px;
+  margin-bottom: 200px; }
+  .section_slider_content {
+    margin-top: 80px; }
+    .section_slider_content_slide {
+      height: 300px;
+      width: 360px;
+      border: 10px solid #eef6f8;
+      border-radius: 10px;
+      position: relative;
+      padding: 35px;
+      -webkit-transition: .3s;
+      transition: .3s;
+      -webkit-transform: scale(0) rotate(45deg);
+      transform: scale(0) rotate(45deg); }
+      .section_slider_content_slide::before {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        right: 0;
+        top: 0;
+        border-top: 60px solid #eef6f8;
+        border-left: 60px solid transparent;
+        z-index: -1; }
+      .section_slider_content_slide::after {
+        content: '';
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        right: 0;
+        top: 0;
+        background-color: #ffffff;
+        border-radius: 30px; }
+      .section_slider_content_slide_header {
+        position: relative;
+        margin-bottom: 30px; }
+      .section_slider_content_slide_heading {
+        font-size: 31px;
+        font-weight: 500;
+        color: #8564c1; }
+        .section_slider_content_slide_heading_discount {
+          position: absolute;
+          top: 0;
+          left: 30%;
+          color: #ed5792; }
+          .section_slider_content_slide_heading_discount .slide_heading_discount_save {
+            font-size: 17px;
+            font-weight: 500;
+            display: block; }
+          .section_slider_content_slide_heading_discount .slide_heading_discount_was {
+            font-size: 13px;
+            font-weight: 500;
+            display: block; }
+      .section_slider_content_slide_subheading {
+        font-size: 20px;
+        font-weight: 500; }
+      .section_slider_content_slide_main {
+        margin-bottom: 40px; }
+      .section_slider_content_slide_content {
+        font-size: 16px;
+        color: #aab3c7;
+        line-height: 24px; }
+      .section_slider_content_slide_footer_code {
+        color: #8564c1; }
+
+.slick-dots li.slick-active button:before {
+  color: #57616b;
+  opacity: 1; }
+
+.slick-dots li button:before {
+  font-size: 20px;
+  line-height: 20px;
+  top: 70px;
+  width: 20px;
+  height: 20px;
+  content: '•';
+  -webkit-text-stroke: 1px #e1e9f1;
+  opacity: 1;
+  color: #fff; }
+
+.slick-active .section_slider_content_slide {
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg); }
 
 @media (max-width: 992px) {
   .section_outer {

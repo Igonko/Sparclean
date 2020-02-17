@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="build/css/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Grand+Hotel|Open+Sans|Work+Sans:400,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="build/libs/css/slick.css">
     <link rel="stylesheet" href="build/css/style.css">
     <title>Sparclean Services</title>
 </head>
@@ -85,44 +86,128 @@
                 <div class="section_estimator_options_block">
                     <div class="estimator_category section_estimator_options_block_bedrooms">
                         <span class="estimator_label bedrooms_label">bedrooms</span>
-                        <div class="estimator_small_option bedrooms_options">1</div>
-                        <div class="estimator_small_option bedrooms_options">2</div>
-                        <div class="estimator_small_option bedrooms_options">3</div>
-                        <div class="estimator_small_option bedrooms_options">4</div>
-                        <div class="estimator_small_option bedrooms_options">5</div>
-                        <div class="estimator_small_option bedrooms_options">6</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="1">1</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="2">2</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="3">3</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="4">4</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="5">5</div>
+                        <div class="estimator_small_option bedrooms_options" data-num="6">6</div>
                     </div>
                     <div class="estimator_category section_estimator_options_block_bathrooms">
                         <span class="estimator_label bathrooms_label">bathrooms</span>
-                        <div class="estimator_small_option bathrooms_options">1</div>
-                        <div class="estimator_small_option bathrooms_options">2</div>
-                        <div class="estimator_small_option bathrooms_options">3</div>
-                        <div class="estimator_small_option bathrooms_options">4</div>
-                        <div class="estimator_small_option bathrooms_options">5</div>
-                        <div class="estimator_small_option bathrooms_options">6</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="1">1</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="2">2</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="3">3</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="4">4</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="5">5</div>
+                        <div class="estimator_small_option bathrooms_options" data-num="6">6</div>
                     </div>
                     <div class="estimator_category section_estimator_options_block_condition">
                         <span class="estimator_label condition_label">home condition</span>
-                        <div class="estimator_big_option condition_options">Slight markings of dirt</div>
-                        <div class="estimator_big_option condition_options">Moderate makings or dirt</div>
-                        <div class="estimator_big_option condition_options">Heavy markings of dirt</div>
+                        <div class="estimator_big_option condition_options" data-clean="75">Slight markings of dirt</div>
+                        <div class="estimator_big_option condition_options" data-clean="100">Moderate makings or dirt</div>
+                        <div class="estimator_big_option condition_options" data-clean="155">Heavy markings of dirt</div>
                     </div>
                     <div class="estimator_category section_estimator_options_block_type">
                         <span class="estimator_label type_label">clean type</span>
-                        <div class="estimator_big_option type_options">Recurring</div>
-                        <div class="estimator_big_option type_options">One-Off</div>
-                        <div class="estimator_big_option type_options">End of Lease</div>
+                        <div class="estimator_big_option type_options" data-room="20" data-bathroom="40" data-price="33">Recurring</div>
+                        <div class="estimator_big_option type_options" data-room="40" data-bathroom="85" data-price="40">One-Off</div>
+                        <div class="estimator_big_option type_options" data-room="70" data-bathroom="130" data-price="40">End of Lease</div>
                     </div>
                 </div>
                 <div class="section_estimator_result_block">
                     <p class="section_estimator_result_block_text">quick cost estimate</p>
                     <p class="section_estimator_result_block_time">3 hours</p>
-                    <p class="section_estimator_result_block_price">$40<span>per clean</span></p>
+                    <div class="section_estimator_result_block_price_wrapper">
+                        <p class="section_estimator_result_block_price">$0</p>
+                        <span class="section_estimator_result_block_price_cleaen">per clean</span>
+                    </div>
                     <button class="section_estimator_result_block_btn">book my cleaning</button>
                 </div>
             </div>
         </div>
     </section>
+    <section class="section_outer section_slider">
+        <h1 class="section_heading">Lorem ipsum</h1>
+        <p class="section_paragraph">Book professional home cleaners and handymen at a moments notice. <br> Just pick a time and well do the rest.</p>
+        <div class="section_slider_content">
+            <div class="section_slider_content_wrapper">
+                <div class="section_slider_content_slide">
+                    <div class="section_slider_content_slide_header">
+                        <p class="section_slider_content_slide_heading">1 Hour free</p>
+                        <p class="section_slider_content_slide_subheading">of heavy markings or dirt</p>
+                    </div>
+                    <div class="section_slider_content_slide_main">
+                        <p class="section_slider_content_slide_content">Book online in 60 seconds and schedule your home service for as early as tomorrow.</p>
+                    </div>
+                    <div class="section_slider_content_slide_footer">
+                        <p class="section_slider_content_slide_footer_code">Use code: 12GKUG</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_slider_content_wrapper">
+                <div class="section_slider_content_slide">
+                    <div class="section_slider_content_slide_header">
+                        <p class="section_slider_content_slide_heading">$270</p>
+                        <div class="section_slider_content_slide_heading_discount">
+                            <span class="slide_heading_discount_save">Save $50</span>
+                            <span class="slide_heading_discount_was">Was $320</span>
+                        </div>
+                        <p class="section_slider_content_slide_subheading">for 8 hour one off clean</p>
+                    </div>
+                    <div class="section_slider_content_slide_main">
+                        <p class="section_slider_content_slide_content">Book online in 60 seconds and schedule your home service for as early as tomorrow.</p>
+                    </div>
+                    <div class="section_slider_content_slide_footer">
+                        <p class="section_slider_content_slide_footer_code">Use code: Springclean</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_slider_content_wrapper">
+                <div class="section_slider_content_slide">
+                    <div class="section_slider_content_slide_header">
+                        <p class="section_slider_content_slide_heading">30% discount</p>
+                        <p class="section_slider_content_slide_subheading">for bathrooms</p>
+                    </div>
+                    <div class="section_slider_content_slide_main">
+                        <p class="section_slider_content_slide_content">Book online in 60 seconds and schedule your home service for as early as tomorrow.</p>
+                    </div>
+                    <div class="section_slider_content_slide_footer">
+                        <p class="section_slider_content_slide_footer_code">Use code: Springclean</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_slider_content_wrapper">
+                <div class="section_slider_content_slide">
+                    <div class="section_slider_content_slide_header">
+                        <p class="section_slider_content_slide_heading">2 Hours free</p>
+                        <p class="section_slider_content_slide_subheading">of heavy markings or dirt</p>
+                    </div>
+                    <div class="section_slider_content_slide_main">
+                        <p class="section_slider_content_slide_content">Book online in 60 seconds and schedule your home service for as early as tomorrow.</p>
+                    </div>
+                    <div class="section_slider_content_slide_footer">
+                        <p class="section_slider_content_slide_footer_code">Use code: Springclean</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section_slider_content_wrapper">
+                <div class="section_slider_content_slide">
+                    <div class="section_slider_content_slide_header">
+                        <p class="section_slider_content_slide_heading">15% discount</p>
+                        <p class="section_slider_content_slide_subheading">for bedrooms</p>
+                    </div>
+                    <div class="section_slider_content_slide_main">
+                        <p class="section_slider_content_slide_content">Book online in 60 seconds and schedule your home service for as early as tomorrow.</p>
+                    </div>
+                    <div class="section_slider_content_slide_footer">
+                        <p class="section_slider_content_slide_footer_code">Use code: Springclean</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="build/libs/js/libs.js"></script>
     <script src="build/js/script.js"></script>
 </body>
 </html>

@@ -27,6 +27,14 @@ $estimator_color: #aab3c7
     box-sizing: border-box
 body
     color: $base-color
+    &::-webkit-scrollbar
+        width: 1em
+    &::-webkit-scrollbar-track
+        box-shadow: inset 0 0 6px rgba(133, 100, 193, 1)
+    &::-webkit-scrollbar-thumb
+        border-radius: 15px
+        background-color: $hover-color
+        outline: 1px solid $hover-color
 .section_outer
     max-width: 1140px
     margin: 0 auto
@@ -88,7 +96,7 @@ body
     font-weight: 500
     text-align: center
 .section_paragraph
-    @include font-work
+    line-height: 26px
     font-size: 18px
     font-weight: 500
     color: #8998a7
@@ -152,7 +160,6 @@ body
             font-weight: 500
 .section_estimator
     margin-top: 130px
-    margin-bottom: 130px
     @include font-work
     &_wrapper
         height: 460px
@@ -160,7 +167,7 @@ body
         box-shadow: 0px 6px 10px -3px #ccc
         margin-top: 80px
     &_main_block
-        padding: 65px 120px 65px 65px
+        padding: 65px 65px 65px 65px
         display: flex
     &_options_block
         width: 660px
@@ -187,6 +194,16 @@ body
             border-radius: 5px
             text-align: center
             padding: 0 20px
+        .estimator_small_option.active
+            background-color: $hover-color
+            border-color: $hover-color
+            cursor: pointer
+            color: $white-color
+        .estimator_big_option.active
+            background-color: $hover-color
+            border-color: $hover-color
+            cursor: pointer
+            color: $white-color
         .estimator_label
             width: 120px
             font-size: 20px
@@ -252,16 +269,18 @@ body
             font-weight: 400
             color: $hover-color
             margin-bottom: 65px
-            position: relative
-            span
+            display: inline-block
+            &_wrapper
+                position: relative
+            &_cleaen
+                position: relative
+                display: inline-block
+                bottom: 18px
+                width: 50px
                 font-size: 14px
                 font-weight: 500
                 color: $estimator_color
                 text-transform: uppercase
-                position: absolute
-                top: 10px
-                right: 10px
-                width: 50px
         &_btn
             border: none
             outline: none
@@ -272,7 +291,93 @@ body
             text-transform: uppercase
             font-weight: 500
             cursor: pointer
-            box-shadow: 0px 1px 9px 4px #ccc;
+            box-shadow: 0px 1px 9px 4px #ccc
             transition: .2s linear
             &:hover
                 background-color: #c09dff
+.section_slider
+    @include font-work
+    margin-top: 130px
+    margin-bottom: 200px
+    &_content
+        margin-top: 80px
+        &_slide
+            height: 300px
+            width: 360px
+            border: 10px solid #eef6f8
+            border-radius: 10px
+            position: relative
+            padding: 35px
+            transition: .3s
+            transform: scale(0) rotate(45deg)
+            &::before
+                content: ''
+                position: absolute
+                width: 0
+                height: 0
+                right: 0
+                top: 0
+                border-top: 60px solid #eef6f8
+                border-left: 60px solid transparent
+                z-index: -1
+            &::after
+                content: ''
+                position: absolute
+                width: 25px
+                height: 25px
+                right: 0
+                top: 0
+                background-color: $white-color
+                border-radius: 30px
+            &_header
+                position: relative
+                margin-bottom: 30px
+            &_heading
+                font-size: 31px
+                font-weight: 500
+                color: $hover-color
+                &_discount
+                    position: absolute
+                    top: 0
+                    left: 30%
+                    color: #ed5792
+                    .slide_heading_discount_save
+                        font-size: 17px
+                        font-weight: 500
+                        display: block
+
+                    .slide_heading_discount_was
+                        font-size: 13px
+                        font-weight: 500
+                        display: block
+            &_subheading
+                font-size: 20px
+                font-weight: 500
+            &_main
+                margin-bottom: 40px
+            &_content
+                font-size: 16px
+                color: $estimator_color
+                line-height: 24px
+            &_footer_code
+                color: $hover-color
+.slick-dots
+    li.slick-active
+        button:before
+            color: #57616b
+            opacity: 1
+.slick-dots
+    li
+        button:before
+            font-size: 20px
+            line-height: 20px
+            top: 70px
+            width: 20px
+            height: 20px
+            content: '•'
+            -webkit-text-stroke: 1px #e1e9f1
+            opacity: 1
+            color: #fff
+.slick-active
+    .section_slider_content_slide
+        transform: scale(1) rotate(0deg)
