@@ -3,6 +3,7 @@ $base-color: #4f6569
 $hover-color: #8564c1
 $white-color: #ffffff
 $estimator_color: #aab3c7
+$tables_background: #fafcfd
 /// /variables ///
 
 /// mixins ///
@@ -301,6 +302,8 @@ body
     margin-bottom: 200px
     &_content
         margin-top: 80px
+        &_wrapper:focus
+            outline: none
         &_slide
             height: 300px
             width: 360px
@@ -381,3 +384,53 @@ body
 .slick-active
     .section_slider_content_slide
         transform: scale(1) rotate(0deg)
+.section_tables
+    @include font-work
+    background-color: $tables_background
+    min-width: 100%
+    &_table
+        table-layout: fixed
+        width: 100%
+        border-collapse: collapse
+        &_wrapper
+            padding-top: 130px
+        &_header th:not(:first-child)
+            width: 23%
+        &_header th:first-child
+            width: 31%
+        &_body
+            background-color: $white-color
+            box-shadow: 0 30px 30px 15px
+        .table_header
+            height: 80px
+            font-size: 20px
+            color: $base-color
+            font-weight: 500
+        .table_content_header,
+        .table_content
+            height: 50px
+            padding-top: 5px
+            vertical-align: top
+            border-bottom: 1px solid #ccc
+        .table_content:last-child
+            border-right: 30px solid $white-color
+        .table_content_header
+            font-size: 16px
+            font-weight: 400
+            color: $estimator_color
+            text-align: left
+            border-left: 30px solid $white-color
+        .table_content.yes
+            vertical-align: middle
+            text-align: center
+            &::before
+                content: '+'
+                width: 20px
+                height: 20px
+        .table_content.no
+            vertical-align: middle
+            text-align: center
+            &::before
+                content: '-'
+                width: 20px
+                height: 20px

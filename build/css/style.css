@@ -377,6 +377,8 @@ body {
   margin-bottom: 200px; }
   .section_slider_content {
     margin-top: 80px; }
+    .section_slider_content_wrapper:focus {
+      outline: none; }
     .section_slider_content_slide {
       height: 300px;
       width: 360px;
@@ -457,6 +459,58 @@ body {
 .slick-active .section_slider_content_slide {
   -webkit-transform: scale(1) rotate(0deg);
   transform: scale(1) rotate(0deg); }
+
+.section_tables {
+  font-family: 'Work Sans', sans-serif;
+  background-color: #fafcfd;
+  min-width: 100%; }
+  .section_tables_table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse; }
+    .section_tables_table_wrapper {
+      padding-top: 130px; }
+    .section_tables_table_header th:not(:first-child) {
+      width: 23%; }
+    .section_tables_table_header th:first-child {
+      width: 31%; }
+    .section_tables_table_body {
+      background-color: #ffffff;
+      -webkit-box-shadow: 0 30px 30px 15px;
+      box-shadow: 0 30px 30px 15px; }
+    .section_tables_table .table_header {
+      height: 80px;
+      font-size: 20px;
+      color: #4f6569;
+      font-weight: 500; }
+    .section_tables_table .table_content_header,
+    .section_tables_table .table_content {
+      height: 50px;
+      padding-top: 5px;
+      vertical-align: top;
+      border-bottom: 1px solid #ccc; }
+    .section_tables_table .table_content:last-child {
+      border-right: 30px solid #ffffff; }
+    .section_tables_table .table_content_header {
+      font-size: 16px;
+      font-weight: 400;
+      color: #aab3c7;
+      text-align: left;
+      border-left: 30px solid #ffffff; }
+    .section_tables_table .table_content.yes {
+      vertical-align: middle;
+      text-align: center; }
+      .section_tables_table .table_content.yes::before {
+        content: '+';
+        width: 20px;
+        height: 20px; }
+    .section_tables_table .table_content.no {
+      vertical-align: middle;
+      text-align: center; }
+      .section_tables_table .table_content.no::before {
+        content: '-';
+        width: 20px;
+        height: 20px; }
 
 @media (max-width: 992px) {
   .section_outer {
