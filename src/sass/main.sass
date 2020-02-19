@@ -2,7 +2,7 @@
 $base-color: #57616b
 $hover-color: #8564c1
 $white-color: #ffffff
-$estimator_color: #b5bfc8
+$estimator_color: #bbc1cd
 $tables_background: #fafcfd
 /// /variables ///
 
@@ -25,6 +25,7 @@ $tables_background: #fafcfd
     outline: none
     color: $estimator_color
     background-color: $white-color
+    min-width: 230px
     padding: 20px 25px
     border-radius: 30px
     text-transform: uppercase
@@ -120,6 +121,30 @@ body
     max-width: 60%
     margin: 0 auto
     text-align: center
+.fixed_phone
+    position: fixed
+    right: 0
+    top: calc(50% - 25px)
+    z-index: 5
+    a
+        @include font-work
+        padding: 15px 20px 15px 30px
+        text-decoration: none
+        color: $base-color
+        background-color: $white-color
+        box-shadow: 0px 6px 10px 3px #ccc
+        border-radius: 5px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            left: 7px
+            bottom: 13px
+            width: 17px
+            height: 20px
+            background-image: url(../img/phone_icon.png)
+            background-size: contain
+            background-repeat: no-repeat
 .section_services
     margin-top: 130px
     text-align: center
@@ -503,34 +528,38 @@ body
         margin: 0 auto
         padding-top: 100px
         @include flex
-    &_right_img_block.first_block .section_you_get_right_img_block_img
+    &_right_img_block.first_block
+        .section_you_get_right_img_block_img
             width: 53%
             height: 390px
-            background-image: url(../img/first_block.png)
-            background-size: cover
-            background-repeat: no-repeat
             box-shadow: 0px 5px 12px 2px #ccc
-    &_left_img_block.second_block .section_you_get_left_img_block_img
+            img
+                width: 100%
+                height: 100%
+    &_left_img_block.second_block
+        .section_you_get_left_img_block_img
             width: 53%
             height: 390px
-            background-image: url(../img/second_block.png)
-            background-size: cover
-            background-repeat: no-repeat
             box-shadow: 0px 5px 12px 2px #ccc
-    &_right_img_block.third_block .section_you_get_right_img_block_img
+            img
+                width: 100%
+                height: 100%
+    &_right_img_block.third_block
+        .section_you_get_right_img_block_img
             width: 53%
             height: 390px
-            background-image: url(../img/third_block.png)
-            background-size: cover
-            background-repeat: no-repeat
             box-shadow: 0px 5px 12px 2px #ccc
-    &_left_img_block.fourth_block .section_you_get_left_img_block_img
+            img
+                width: 100%
+                height: 100%
+    &_left_img_block.fourth_block
+        .section_you_get_left_img_block_img
             width: 53%
             height: 390px
-            background-image: url(../img/fourth_block.png)
-            background-size: cover
-            background-repeat: no-repeat
             box-shadow: 0px 5px 12px 2px #ccc
+            img
+                width: 100%
+                height: 100%
     &_right_img_block_text
         width: 34%
         margin: 0 auto
@@ -568,7 +597,7 @@ body
             list-style: none
             margin-left: 40px
             &_item
-                color: #737777
+                color: $base-color
                 font-size: 16px
                 font-weight: 500
                 line-height: 30px
@@ -583,7 +612,193 @@ body
                     background-image: url(../img/check_yes.png)
                     background-size: contain
                     background-repeat: no-repeat
+    &_info
+        margin: 130px 0
+    &_info_block
+        display: flex
+        align-items: flex-start
+        &_icon_item
+            color: $hover-color
+            font-weight: 600
+            font-size: 15px
+            min-width: max-content
+            margin: 0 50px 0 40px
+            position: relative
+            &::before
+                content: ''
+                position: absolute
+                left: -40px
+                bottom: 0
+                width: 24px
+                height: 24px
+                background-image: url(../img/inform_icon.png)
+                background-size: contain
+                background-repeat: no-repeat
+        &_text
+            max-width: 55%
+            color: $estimator_color
 .fourth_block
     .img_block_list_item
         &::before
             background-image: url(../img/plus.png)
+.section_ready_to_book
+    @include font-work
+    width: 100%
+    background-color: $tables_background
+    padding-top: 100px
+    &_wrapper
+        @include flex
+        padding-bottom: 90px
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 3px
+            border-radius: 30px
+            background-color: $estimator_color
+    &_text
+        width: 50%
+        h1
+            text-align: left
+        p
+            text-align: left
+            margin: 0
+            max-width: 90%
+            font-size: 18px
+    &_btn
+        width: 50%
+        display: flex
+        justify-content: space-around
+        button
+            @include button
+.section_footer
+    @include font-work
+    padding: 100px 0
+    background-color: $tables_background
+    .footer_inner_block_wrapper
+        color: $base-color
+        display: flex
+        justify-content: space-between
+        align-items: flex-start
+        .footer_inner_block
+            width: 23%
+        .footer_inner_block:first-child
+            width: 31%
+        .first_block_content
+            width: 75%
+            margin-right: auto
+            .section_header_logo
+                margin-bottom: 40px
+        .second_section_contact_list
+            width: 70%
+            margin: 0 auto
+            list-style: none
+            .second_section_contact_item
+                margin-bottom: 40px
+                position: relative
+                a
+                    text-decoration: none
+                    color: $base-color
+                    font-size: 500
+                &::before
+                    content: ''
+                    position: absolute
+                    background-size: contain
+                    background-repeat: no-repeat
+                &:nth-child(1)::before
+                    left: -30px
+                    top: -6px
+                    width: 22px
+                    height: 19px
+                    background-image: url(../img/home_icon.png)
+                &:nth-child(2)::before
+                    left: -30px
+                    top: 5px
+                    width: 14px
+                    height: 20px
+                    background-image: url(../img/phone_icon.png)
+                &:nth-child(3)::before
+                    left: -33px
+                    top: 0px
+                    width: 23px
+                    height: 23px
+                    background-image: url(../img/at_icon.png)
+            .contact_item_list
+                list-style: none
+        .third_section_nav_list
+            width: 70%
+            margin: 0 auto
+            list-style: none
+            .third_section_nav_item
+                margin-bottom: 15px
+                a
+                    text-decoration: none
+                    text-transform: uppercase
+                    color: $base-color
+                    font-weight: 500
+                    transition: .3s linear
+                    &:hover
+                        color: $hover-color
+        .fourth_section_available_list
+            width: 55%
+            margin: 0 auto
+            list-style: none
+            .fourth_section_available_item
+                margin-bottom: 20px
+            .fourth_section_available_item:last-child
+                span
+                    position: relative
+                    &::before
+                        content: ''
+                        position: absolute
+                        bottom: 0
+                        left: 0
+                        width: 100%
+                        height: 2px
+                        background-color: $estimator_color
+            .fourth_section_available_item:first-child
+                color: $hover-color
+                font-weight: 500
+                margin-bottom: 35px
+                position: relative
+                &::before
+                    content: ''
+                    position: absolute
+                    left: -30px
+                    top: 0px
+                    width: 22px
+                    height: 19px
+                    background-image: url(../img/location_icon.png)
+                    background-size: contain
+                    background-repeat: no-repeat
+    &_info_block
+        display: flex
+        align-items: flex-end
+        .creator_block_text
+            margin-bottom: 30px
+            font-weight: 500
+            font-size: 15px
+            position: relative
+            &::after
+                content: ''
+                position: absolute
+                right: 0
+                top: 7px
+                height: 1px
+                width: 45px
+                background-color: $base-color
+        .creator_logo
+            max-width: 140px
+        .terms_and_policy_block
+            width: 50%
+            margin: 0 auto
+            .terms_and_policy_list
+                list-style: none
+                display: flex
+                justify-content: space-between
+                a
+                    text-decoration: none
+                    color: $estimator_color
