@@ -56,6 +56,34 @@ body
         border-radius: 15px
         background-color: $hover-color
         outline: 1px solid $hover-color
+
+/// animate ///
+.animate
+    height: max-content
+    overflow: hidden
+    position: relative
+    h1
+        transition: .3s ease-in-out
+        transform: translateY(-100%)
+        transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px)
+    p
+        transition: .3s ease-in-out
+        transform: translateY(-100%)
+        transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px)
+.animate.active
+    p
+        position: relative
+        transition: .6s ease-in-out
+        transition-delay: 0.1s
+        transform: matrix(1, 0, 0, 1, 0, -5) translateZ(0px) translateY(0)
+    h1
+        position: relative
+        transition: .6s ease-in-out
+        transform: matrix(1, 0, 0, 1, 0, -5) translateZ(0px) translateY(0)
+
+/// /animate ///
+
+
 .section_outer
     max-width: 1140px
     margin: 0 auto
@@ -171,6 +199,7 @@ body
         flex-direction: column
         color: #4b3770
         position: relative
+        transition: 0.4s linear
         &::before
             content: ''
             position: absolute
@@ -189,6 +218,9 @@ body
             height: 20px
             border-radius: 0 0 50% 50% / 0 0 100% 100%
             background-color: $hover-color
+        &:hover
+            transform: rotateY(180deg) scaleX(-1)
+            transition: 0.4s linear
         &_service
             height: 25%
             width: 80%
@@ -339,8 +371,6 @@ body
             border-radius: 10px
             position: relative
             padding: 35px
-            transition: .3s
-            transform: scale(0) rotate(45deg)
             &::before
                 content: ''
                 position: absolute
@@ -376,7 +406,6 @@ body
                         font-size: 17px
                         font-weight: 500
                         display: block
-
                     .slide_heading_discount_was
                         font-size: 13px
                         font-weight: 500
@@ -392,6 +421,17 @@ body
                 line-height: 24px
             &_footer_code
                 color: $hover-color
+.slick-active
+    .section_slider_content_slide
+        animation: 0.5s linear slideAnim
+@keyframes slideAnim
+    from
+        transform: translateY(30%)
+
+    to
+        transform: translateY(0)
+
+
 .slick-dots
     li.slick-active
         button:before
@@ -409,9 +449,6 @@ body
             -webkit-text-stroke: 1px #e1e9f1
             opacity: 1
             color: #fff
-.slick-active
-    .section_slider_content_slide
-        transform: scale(1) rotate(0deg)
 .section_tables
     @include font-work
     background-color: $tables_background
@@ -536,37 +573,130 @@ body
         padding-top: 100px
         @include flex
     &_right_img_block.first_block
+        overflow: hidden
         .section_you_get_right_img_block_img
+            transition: all .6s ease-in-out
+            transform: translateX(150%)
             width: 53%
             height: 390px
             box-shadow: 0px 5px 12px 2px #ccc
             img
                 width: 100%
                 height: 100%
+    .first_block.active
+        .section_you_get_right_img_block_img,
+        .img_block_list_item,
+        h4
+            transform: translateX(0%)
+        h4
+            transition-delay: 0.1s
+        .img_block_list_item:nth-child(1)
+            transition-delay: 0.2s
+        .img_block_list_item:nth-child(2)
+            transition-delay: 0.3s
+        .img_block_list_item:nth-child(3)
+            transition-delay: 0.4s
+        .img_block_list_item:nth-child(4)
+            transition-delay: 0.5s
+        .img_block_list_item:nth-child(5)
+            transition-delay: 0.6s
+        .img_block_list_item:nth-child(6)
+            transition-delay: 0.7s
+        .img_block_list_item:nth-child(7)
+            transition-delay: 0.8s
     &_left_img_block.second_block
         .section_you_get_left_img_block_img
+            transition: all .6s ease-in-out
+            transform: translateX(-150%)
             width: 53%
             height: 390px
             box-shadow: 0px 5px 12px 2px #ccc
             img
                 width: 100%
                 height: 100%
+    .second_block.active
+        .section_you_get_left_img_block_img,
+        .img_block_list_item,
+        h4
+            transform: translateX(0%)
+        h4
+            transition-delay: 0.1s
+        .img_block_list_item:nth-child(1)
+            transition-delay: 0.2s
+        .img_block_list_item:nth-child(2)
+            transition-delay: 0.3s
+        .img_block_list_item:nth-child(3)
+            transition-delay: 0.4s
+        .img_block_list_item:nth-child(4)
+            transition-delay: 0.5s
+        .img_block_list_item:nth-child(5)
+            transition-delay: 0.6s
+        .img_block_list_item:nth-child(6)
+            transition-delay: 0.7s
     &_right_img_block.third_block
         .section_you_get_right_img_block_img
+            transition: all .6s ease-in-out
+            transform: translateX(150%)
             width: 53%
             height: 390px
             box-shadow: 0px 5px 12px 2px #ccc
             img
                 width: 100%
                 height: 100%
+    .third_block.active
+        .section_you_get_right_img_block_img,
+        .img_block_list_item,
+        h4
+            transform: translateX(0%)
+        h4
+            transition-delay: 0.1s
+        .img_block_list_item:nth-child(1)
+            transition-delay: 0.2s
+        .img_block_list_item:nth-child(2)
+            transition-delay: 0.3s
+        .img_block_list_item:nth-child(3)
+            transition-delay: 0.4s
+        .img_block_list_item:nth-child(4)
+            transition-delay: 0.5s
+        .img_block_list_item:nth-child(5)
+            transition-delay: 0.6s
+        .img_block_list_item:nth-child(6)
+            transition-delay: 0.7s
+        .img_block_list_item:nth-child(7)
+            transition-delay: 0.8s
     &_left_img_block.fourth_block
         .section_you_get_left_img_block_img
+            transition: all .6s ease-in-out
+            transform: translateX(-150%)
             width: 53%
             height: 390px
             box-shadow: 0px 5px 12px 2px #ccc
             img
                 width: 100%
                 height: 100%
+    .fourth_block.active
+        .section_you_get_left_img_block_img,
+        .img_block_list_item,
+        h4
+            transform: translateX(0%)
+        h4
+            transition-delay: 0.1s
+        .img_block_list_item:nth-child(1)
+            transition-delay: 0.2s
+        .img_block_list_item:nth-child(2)
+            transition-delay: 0.3s
+        .img_block_list_item:nth-child(3)
+            transition-delay: 0.4s
+        .img_block_list_item:nth-child(4)
+            transition-delay: 0.5s
+        .img_block_list_item:nth-child(5)
+            transition-delay: 0.6s
+        .img_block_list_item:nth-child(6)
+            transition-delay: 0.7s
+        .img_block_list_item:nth-child(7)
+            transition-delay: 0.8s
+        .img_block_list_item:nth-child(8)
+            transition-delay: 0.9s
     &_right_img_block_text
         width: 34%
         margin: 0 auto
@@ -574,6 +704,8 @@ body
             font-size: 20px
             font-weight: 500
             margin-bottom: 20px
+            transition: 0.5s linear
+            transform: translateX(-150%)
         .img_block_list
             list-style: none
             margin-left: 40px
@@ -583,6 +715,8 @@ body
                 font-weight: 500
                 line-height: 30px
                 position: relative
+                transition: 0.5s linear
+                transform: translateX(-150%)
                 &::before
                     content: ''
                     position: absolute
@@ -600,6 +734,8 @@ body
             font-size: 20px
             font-weight: 500
             margin-bottom: 20px
+            transition: 0.5s linear
+            transform: translateX(150%)
         .img_block_list
             list-style: none
             margin-left: 40px
@@ -609,6 +745,8 @@ body
                 font-weight: 500
                 line-height: 30px
                 position: relative
+                transition: 0.5s linear
+                transform: translateX(150%)
                 &::before
                     content: ''
                     position: absolute
