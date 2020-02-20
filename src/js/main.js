@@ -41,10 +41,11 @@ $('.mobile_menu_wrapper').on('click', () => {
 
 $('.section_slider_content').slick({
   dots: true,
+  arrows: false,
   infinite: true,
   slidesToShow: 3,
   slidesToScroll: 1,
-  // autoplay: true,
+  autoplay: true,
   autoplaySpeed: 3000,
   responsive: [
     {
