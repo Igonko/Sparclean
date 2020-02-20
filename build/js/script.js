@@ -42,6 +42,14 @@ $('.mobile_menu_wrapper').on('click', function () {
     $('.mobile_menu, .section_header_wrapper').toggleClass('active');
 })
 
+$(document).ready(function(){
+	$("nav li a").click(function () {
+		elementClick = $(this).attr("href");
+		destination = $(''+elementClick+'').offset().top;
+		$("body,html").animate({scrollTop: destination }, 800);
+	});
+});
+
 $('.section_slider_content').slick({
   dots: true,
   arrows: false,
