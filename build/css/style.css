@@ -28,15 +28,15 @@ body {
     transition: .3s ease-in-out;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px);
-    transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px); }
+    -webkit-transform: matrix(1, 0, 0, 1, 0, -120) translateZ(0px);
+    transform: matrix(1, 0, 0, 1, 0, -120) translateZ(0px); }
   .animate p {
     -webkit-transition: .3s ease-in-out;
     transition: .3s ease-in-out;
     -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
-    -webkit-transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px);
-    transform: matrix(1, 0, 0, 1, 0, -95) translateZ(0px); }
+    -webkit-transform: matrix(1, 0, 0, 1, 0, -120) translateZ(0px);
+    transform: matrix(1, 0, 0, 1, 0, -120) translateZ(0px); }
 
 .animate.active p {
   position: relative;
