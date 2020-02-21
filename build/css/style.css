@@ -1604,6 +1604,8 @@ body {
         .section_you_get_info_block_text {
           max-width: 100%;
           margin-top: 20px; }
+  .section_you_get .img_block_list_item {
+    font-size: 12px; }
   .section_you_get .first_block.active .img_block_list_item,
   .section_you_get .second_block.active .img_block_list_item,
   .section_you_get .third_block.active .img_block_list_item,
