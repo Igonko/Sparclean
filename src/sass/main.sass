@@ -218,9 +218,13 @@ body
             height: 20px
             border-radius: 0 0 50% 50% / 0 0 100% 100%
             background-color: $hover-color
-        &:hover
-            transform: rotateY(180deg) scaleX(-1)
-            transition: 0.4s linear
+        &_wrapper
+            width: max-content
+            height: 100%
+            &:hover
+                .section_services_price_item
+                    transform: rotateY(180deg) scaleX(-1)
+                    transition: 0.4s linear
         &_service
             height: 25%
             width: 80%
@@ -426,11 +430,10 @@ body
         animation: 0.5s linear slideAnim
 @keyframes slideAnim
     from
-        transform: translateY(30%)
+        transform: translateX(-40%)
 
     to
-        transform: translateY(0)
-
+        transform: translateX(0)
 
 .slick-dots
     li.slick-active
@@ -604,6 +607,7 @@ body
             transition-delay: 0.7s
         .img_block_list_item:nth-child(7)
             transition-delay: 0.8s
+
     &_left_img_block.second_block
         .section_you_get_left_img_block_img
             transition: all .6s ease-in-out

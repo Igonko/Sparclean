@@ -106,8 +106,4 @@ $('.section_slider_content').slick({
   ]
 });
 
-$('.section_slider_content_slide').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-  console.log(nextSlide);
-});
-
 //# sourceMappingURL=script.js.map

@@ -305,6 +305,8 @@
         &_logo
             font-size: 26px
             width: 85px
+            position: relative
+            left: 5px
             a
                 span
                     left: 20%
@@ -315,6 +317,7 @@
     .section_paragraph
             font-size: 14px
             max-width: 80%
+            max-width: 100%
     .section_outer
         max-width: 400px
     .section_services
@@ -409,10 +412,17 @@
             margin: 60px 0
             &_block
                 flex-direction: column
+                margin: 0 10px
                 &_text
                     max-width: 100%
                     margin-top: 20px
     .section_you_get
+        .first_block.active,
+        .second_block.active,
+        .third_block.active,
+        .fourth_block.active
+            .img_block_list_item
+                transform: translateX(3%)
         .section_you_get_left_img_block
             .section_you_get_left_img_block_img
                 width: 100%
